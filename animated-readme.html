@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Hubbali - DevSecOps Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00ff9f;
+            --secondary: #ff006e;
+            --tertiary: #0099ff;
+            --dark: #0a0e27;
+            --darker: #050811;
+            --accent: #ffbe0b;
+            --glow: 0 0 20px var(--primary);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--darker) 0%, #1a1f3a 50%, var(--dark) 100%);
+            color: #e0e0e0;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Grid background */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(0, 255, 159, 0.03) 25%, rgba(0, 255, 159, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 255, 159, 0.03) 75%, rgba(0, 255, 159, 0.03) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 255, 159, 0.03) 25%, rgba(0, 255, 159, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 255, 159, 0.03) 75%, rgba(0, 255, 159, 0.03) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        h1 {
+            font-size: 56px;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 10px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        h1 span {
+            color: var(--primary);
+            text-shadow: var(--glow);
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #888;
+            margin-bottom: 40px;
+            animation: slideDown 0.8s ease-out 0.1s both;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-family: 'Orbitron', sans-serif;
+            margin: 50px 0 30px 0;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 255, 159, 0.5);
+            animation: slideUp 0.6s ease-out both;
+        }
+
+        h2:nth-of-type(1) { animation-delay: 0s; }
+        h2:nth-of-type(2) { animation-delay: 0.1s; }
+        h2:nth-of-type(3) { animation-delay: 0.2s; }
+        h2:nth-of-type(4) { animation-delay: 0.3s; }
+        h2:nth-of-type(5) { animation-delay: 0.4s; }
+        h2:nth-of-type(6) { animation-delay: 0.5s; }
+        h2:nth-of-type(7) { animation-delay: 0.6s; }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--tertiary);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 20px;
+            animation: fadeIn 0.8s ease-out both;
+        }
+
+        p:nth-of-type(1) { animation-delay: 0.2s; }
+        p:nth-of-type(2) { animation-delay: 0.3s; }
+
+        /* Divider */
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 40px 0;
+            box-shadow: 0 0 20px var(--primary);
+            animation: slideRight 0.8s ease-out both;
+        }
+
+        /* Stats Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            animation: slideUp 0.8s ease-out 0.3s both;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid rgba(0, 255, 159, 0.2);
+        }
+
+        th {
+            background: rgba(0, 255, 159, 0.1);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        tr:hover {
+            background: rgba(0, 255, 159, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        td:first-child {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            animation: slideLeft 0.6s ease-out both;
+        }
+
+        li:nth-child(1) { animation-delay: 0s; }
+        li:nth-child(2) { animation-delay: 0.05s; }
+        li:nth-child(3) { animation-delay: 0.1s; }
+        li:nth-child(4) { animation-delay: 0.15s; }
+        li:nth-child(5) { animation-delay: 0.2s; }
+        li:nth-child(6) { animation-delay: 0.25s; }
+        li:nth-child(7) { animation-delay: 0.3s; }
+        li:nth-child(8) { animation-delay: 0.35s; }
+
+        li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        strong {
+            color: var(--tertiary);
+            font-weight: 600;
+        }
+
+        /* Code block */
+        code {
+            background: rgba(0, 255, 159, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--accent);
+            font-family: 'Courier New', monospace;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 255, 159, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+            animation: slideUp 0.8s ease-out 0.4s both;
+            line-height: 1.6;
+        }
+
+        /* Links */
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+            box-shadow: var(--glow);
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        a:hover {
+            text-shadow: 0 0 10px var(--primary);
+        }
+
+        /* Section boxes */
+        .section-box {
+            background: rgba(10, 14, 39, 0.6);
+            border: 2px solid rgba(0, 255, 159, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out both;
+        }
+
+        .section-box:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 30px rgba(0, 255, 159, 0.2), inset 0 0 20px rgba(0, 255, 159, 0.05);
+        }
+
+        .section-box h3 {
+            margin-top: 0;
+        }
+
+        .section-box:nth-of-type(1) { animation-delay: 0.3s; }
+        .section-box:nth-of-type(2) { animation-delay: 0.4s; }
+        .section-box:nth-of-type(3) { animation-delay: 0.5s; }
+        .section-box:nth-of-type(4) { animation-delay: 0.6s; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(0, 255, 159, 0.2);
+            animation: fadeIn 1s ease-out 0.8s both;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: var(--primary);
+            font-weight: 700;
+            text-shadow: var(--glow);
+        }
+
+        .subtitle {
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+            to {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <h1><span>Abdul Hubbali</span></h1>
+        <h3>🔐 DevSecOps Engineer & Microsoft Certified Expert</h3>
+
+        <hr>
+
+        <!-- About Me -->
+        <h2>🔐 About Me</h2>
+        <p>DevSecOps Engineer and Microsoft Certified Expert skilled in <strong>Azure</strong>, <strong>AWS</strong>, <strong>Azure DevOps</strong>, <strong>PowerShell</strong>, and <strong>Azure Kubernetes Service (AKS)</strong>. I specialize in designing and deploying scalable, automated, and secure cloud solutions that accelerate software delivery and improve operational efficiency.</p>
+
+        <p>Passionate about cloud security automation, <strong>Cloud Security Posture Management (CSPM)</strong>, continuous threat detection, and container orchestration, I focus on building high-availability platforms while seamlessly integrating security into the SDLC. My long-term goal is to advance into a <strong>DevSecOps Architect</strong> or <strong>Cloud Security Architect</strong> role, leading secure cloud transformations at an enterprise scale.</p>
+
+        <hr>
+
+        <!-- Stats -->
+        <h2>📊 Quick Stats</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cloud Platforms</td>
+                    <td>Azure, AWS, GCP</td>
+                </tr>
+                <tr>
+                    <td>Kubernetes Expertise</td>
+                    <td>AKS, Container Security</td>
+                </tr>
+                <tr>
+                    <td>Automation Tools</td>
+                    <td>PowerShell, Terraform, Azure DevOps</td>
+                </tr>
+                <tr>
+                    <td>Repositories</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>Focus Area</td>
+                    <td>Security-First Cloud Solutions</td>
+                </tr>
+                <tr>
+                    <td>Certifications</td>
+                    <td>Microsoft Certified</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <!-- Core Competencies -->
+        <h2>🛠️ Core Competencies</h2>
+
+        <div class="section-box">
+            <h3>Cloud Platforms</h3>
+            <ul>
+                <li><strong>Microsoft Azure</strong> - VMs, App Services, AKS, Azure DevOps, Azure Security Center</li>
+                <li><strong>Amazon AWS</strong> - EC2, S3, Lambda, IAM, Security Hub</li>
+                <li><strong>Container Orchestration</strong> - Kubernetes, Azure Kubernetes Service (AKS)</li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <h3>Security & Compliance</h3>
+            <ul>
+                <li><strong>Cloud Security Posture Management (CSPM)</strong> - Continuous monitoring and remediation</li>
+                <li><strong>Infrastructure Security</strong> - Network policies, RBAC, encryption, secrets management</li>
+                <li><strong>Compliance Automation</strong> - CIS benchmarks, compliance automation</li>
+                <li><strong>Vulnerability Management</strong> - Threat detection, scanning, and remediation</li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <h3>DevOps & Automation</h3>
+            <ul>
+                <li><strong>CI/CD Pipelines</strong> - Azure DevOps, GitHub Actions</li>
+                <li><strong>Infrastructure as Code</strong> - Terraform, ARM Templates, PowerShell DSC</li>
+                <li><strong>Automation</strong> - PowerShell scripting, Python automation</li>
+                <li><strong>Container Security</strong> - Docker, image scanning, runtime security</li>
+            </ul>
+        </div>
+
+        <h3>Skills & Technologies</h3>
+        <div class="code-block">Azure DevOps | PowerShell | Terraform | Docker | Kubernetes | Git<br>
+Python | Bash | ARM Templates | Azure CLI | AWS CLI<br>
+YAML | JSON | IaC Best Practices | Security Automation</div>
+
+        <hr>
+
+        <!-- What I Do -->
+        <h2>🚀 What I Do</h2>
+
+        <div class="section-box">
+            <h3>Security-First Architecture</h3>
+            <ul>
+                <li>Design and implement secure-by-default cloud architectures</li>
+                <li>Integrate security controls into every stage of the SDLC</li>
+                <li>Automate compliance and threat detection</li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <h3>Cloud Infrastructure Automation</h3>
+            <ul>
+                <li>Build scalable, resilient cloud solutions on Azure and AWS</li>
+                <li>Implement infrastructure-as-code for consistency and repeatability</li>
+                <li>Optimize costs while maintaining security and performance</li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <h3>Container & Kubernetes Expertise</h3>
+            <ul>
+                <li>Deploy and manage high-availability AKS clusters</li>
+                <li>Implement network policies and RBAC for containerized workloads</li>
+                <li>Secure container registries and image scanning pipelines</li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <h3>Continuous Monitoring & Threat Detection</h3>
+            <ul>
+                <li>Implement CSPM solutions for real-time cloud posture visibility</li>
+                <li>Set up security alerts and automated remediation</li>
+                <li>Enable compliance reporting across multi-cloud environments</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <!-- Featured Repositories -->
+        <h2>📚 Featured Repositories</h2>
+        <p>Visit my GitHub to explore:</p>
+        <ul>
+            <li><strong>Morphe-Fork</strong> - Java-based framework for scalable applications</li>
+            <li><strong>Objectives</strong> - Learning goals and professional development tracking</li>
+            <li><strong>DevSecOps Projects</strong> - Cloud security automation and infrastructure code</li>
+        </ul>
+        <p>🔗 <a href="https://github.com/inferno12121">View All Repositories</a></p>
+
+        <hr>
+
+        <!-- Vision -->
+        <h2>🎯 My Vision</h2>
+        <p>Leading the shift towards <strong>security-integrated cloud transformations</strong> where:</p>
+        <ul>
+            <li>✅ Security is built in, not bolted on</li>
+            <li>✅ Automation accelerates delivery without compromising safety</li>
+            <li>✅ Organizations achieve compliance through intelligent design, not manual processes</li>
+            <li>✅ Cloud platforms become the foundation for trusted, resilient systems</li>
+        </ul>
+
+        <hr>
+
+        <!-- Connect -->
+        <h2>💼 Let's Connect</h2>
+        <ul>
+            <li>🔗 <strong>GitHub</strong>: <a href="https://github.com/inferno12121">inferno12121</a></li>
+            <li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/abdul-hubbali-54670813b">Abdul Hubbali</a></li>
+        </ul>
+
+        <hr>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="tagline">"Securing the cloud. Automating at scale."</p>
+            <p class="subtitle">Building enterprise-grade cloud solutions with security at the core.</p>
+        </div>
+    </div>
+</body>
+</html>
