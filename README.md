@@ -19,9 +19,8 @@ Passionate about cloud security automation, **Cloud Security Posture Management 
 | **Cloud Platforms** | Azure, AWS, GCP |
 | **Kubernetes Expertise** | AKS, Container Security |
 | **Automation Tools** | PowerShell, Terraform, Azure DevOps |
-| **Repositories** | 16 |
 | **Focus Area** | Security-First Cloud Solutions |
-| **Certifications** | Microsoft Certified |
+| **Certifications** | Microsoft Certified Azure Administrator, Microsoft Certified DevOps Expert |
 
 ---
 
