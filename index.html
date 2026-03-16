@@ -82,11 +82,11 @@
     }
 
     .hero h1 {
-      font-family: var(--serif);
+      font-family: 'Calibri', 'Candara', sans-serif;
       font-size: clamp(2.8rem, 5.5vw, 4.2rem);
       font-weight: 400;
       line-height: 1.05;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       margin-bottom: 1rem;
       white-space: nowrap;
     }
@@ -260,8 +260,9 @@
       flex-shrink: 0;
       border-radius: 10px;
       overflow: hidden;
-      background: var(--faint);
+      background: var(--white);
       display: flex; align-items: center; justify-content: center;
+      padding: 4px;
     }
 
     .cert-badge-img img { width: 100%; height: 100%; object-fit: contain; }
@@ -616,7 +617,7 @@
   <header class="hero">
     <div>
       <div class="hero-badge">Open to senior roles</div>
-      <h1>Abdul <em>Hubbali</em></h1>
+      <h1>Abdul Hubbali</h1>
       <p class="hero-desc">
         DevSecOps Engineer &amp; Microsoft Certified Expert building secure,
         automated cloud architectures on Azure, AWS &amp; Kubernetes.
@@ -712,57 +713,92 @@
   </div>
 
   <!-- Skills -->
-  <div class="section-heading">Skills & Technologies</div>
-  <div class="grid grid-2">
+  <div class="section-heading">Technical Skills</div>
+  <div class="grid grid-3">
+
     <div class="card">
       <div class="card-label">Cloud Platforms</div>
-      <div class="skill-group">
-        <div class="skill-group-title">Azure</div>
-        <div class="tags">
-          <span class="tag">VMs</span><span class="tag">App Services</span>
-          <span class="tag">AKS</span><span class="tag">Security Center</span>
-          <span class="tag">Azure DevOps</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">AWS</div>
-        <div class="tags">
-          <span class="tag">EC2</span><span class="tag">S3</span>
-          <span class="tag">Lambda</span><span class="tag">IAM</span>
-          <span class="tag">Security Hub</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Containers</div>
-        <div class="tags">
-          <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">AKS</span>
-        </div>
+      <div class="tags" style="margin-top:0">
+        <span class="tag tag-blue">Microsoft Azure</span>
+        <span class="tag tag-blue">AWS</span>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-label">Toolchain</div>
-      <div class="skill-group">
-        <div class="skill-group-title">Automation & IaC</div>
-        <div class="tags">
-          <span class="tag">Terraform</span><span class="tag">ARM Templates</span>
-          <span class="tag">PowerShell</span><span class="tag">Python</span><span class="tag">Bash</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">CI/CD & Source Control</div>
-        <div class="tags">
-          <span class="tag">Azure DevOps</span><span class="tag">GitHub Actions</span><span class="tag">Git</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Formats & CLIs</div>
-        <div class="tags">
-          <span class="tag">YAML</span><span class="tag">JSON</span>
-          <span class="tag">Azure CLI</span><span class="tag">AWS CLI</span>
-        </div>
+      <div class="card-label">DevOps Tools</div>
+      <div class="tags" style="margin-top:0">
+        <span class="tag tag-green">Azure DevOps</span>
+        <span class="tag tag-green">Azure Pipelines</span>
+        <span class="tag tag-green">Azure Artifacts</span>
+        <span class="tag tag-green">GitHub</span>
+        <span class="tag tag-green">GIT</span>
       </div>
     </div>
+
+    <div class="card">
+      <div class="card-label">Scripting Languages</div>
+      <div class="tags" style="margin-top:0">
+        <span class="tag">PowerShell</span>
+        <span class="tag">Bash</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Containerization</div>
+      <div class="tags" style="margin-top:0">
+        <span class="tag tag-blue">Docker</span>
+        <span class="tag tag-blue">Azure Kubernetes Service</span>
+        <span class="tag tag-blue">Azure Container Registry</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Version Control</div>
+      <div class="tags" style="margin-top:0">
+        <span class="tag tag-green">GitHub</span>
+        <span class="tag tag-green">Azure Repos</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Security Tools</div>
+      <div class="tags" style="margin-top:0">
+        <span class="tag tag-amber">Prisma Cloud</span>
+        <span class="tag tag-amber">Qualys</span>
+        <span class="tag tag-amber">CloudGuard</span>
+        <span class="tag tag-amber">CheckMarx</span>
+        <span class="tag tag-amber">CyberInt</span>
+        <span class="tag tag-amber">Cortex Xpanse</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Operating Systems</div>
+      <div class="tags" style="margin-top:0">
+        <span class="tag">Windows Server</span>
+        <span class="tag">Linux — Ubuntu</span>
+        <span class="tag">Azure Linux</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Visualization Tools</div>
+      <div class="tags" style="margin-top:0">
+        <span class="tag tag-blue">Amazon QuickSight</span>
+        <span class="tag tag-blue">Power BI</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Monitoring & Logging</div>
+      <div class="tags" style="margin-top:0">
+        <span class="tag tag-green">Azure Monitor</span>
+        <span class="tag tag-green">Application Insights</span>
+        <span class="tag tag-green">Amazon CloudWatch</span>
+        <span class="tag tag-green">ELK Stack</span>
+      </div>
+    </div>
+
   </div>
 
   <!-- What I Do -->
