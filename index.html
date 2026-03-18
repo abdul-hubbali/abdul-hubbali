@@ -311,12 +311,12 @@
       <div class="modal-body">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0;">
           <div style="text-align: center;">
-            <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(27, 82, 196, 0.35);">
+            <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px;">
               <img src="logos/aws.png" alt="Amazon AWS" style="width: 100px; height: 100px; object-fit: contain;">
             </div>
           </div>
           <div style="text-align: center;">
-            <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(27, 82, 196, 0.35);">
+            <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px;">
               <img src="logos/azure.png" alt="Microsoft Azure" style="width: 100px; height: 100px; object-fit: contain;">
             </div>
           </div>
@@ -337,12 +337,12 @@
       <div class="modal-body">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0;">
           <div style="text-align: center;">
-            <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(27, 82, 196, 0.35);">
+            <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px;">
               <img src="logos/microsoft-certified-associate-badge.svg" alt="AZ-104" style="width: 120px; height: 120px; object-fit: contain;">
             </div>
           </div>
           <div style="text-align: center;">
-            <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(27, 82, 196, 0.35);">
+            <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px;">
               <img src="logos/microsoft-certified-expert-badge.svg" alt="AZ-400" style="width: 120px; height: 120px; object-fit: contain;">
             </div>
           </div>
@@ -438,6 +438,7 @@
       az104: {
         title: 'Azure Administrator Associate',
         id: 'AZ-104',
+        issuer: 'Microsoft Corporation',
         url: 'https://learn.microsoft.com/en-us/users/abdulhubbali/credentials/14fe230f17f3ace6',
         badge: 'logos/microsoft-certified-associate-badge.svg',
         desc: 'Demonstrates skills and knowledge to implement, manage, and monitor identity, governance, storage, compute, and virtual networks in a cloud environment.'
@@ -445,6 +446,7 @@
       az400: {
         title: 'DevOps Engineer Expert',
         id: 'AZ-400',
+        issuer: 'Microsoft Corporation',
         url: 'https://learn.microsoft.com/en-in/users/abdulhubbali/credentials/86cb8c4fae12992e',
         badge: 'logos/microsoft-certified-expert-badge.svg',
         desc: 'Demonstrates the ability to combine people, process, and technologies to continuously deliver valuable products and services that meet end user needs and business objectives.'
@@ -490,11 +492,11 @@
       const c = certs[key];
       const overlay = document.getElementById('certModal');
       document.getElementById('modalTitle').textContent = c.title;
-      document.getElementById('modalCertId').textContent = c.id;
+      document.getElementById('modalCertId').textContent = c.issuer;
       document.getElementById('modalBadgeImg').src = 'logos/Microsoft.png';
       document.getElementById('modalBadgeLarge').src = c.badge;
       document.getElementById('modalCredName').textContent = c.title;
-      document.getElementById('modalCredExam').textContent = c.id;
+      document.getElementById('modalCredExam').textContent = c.issuer;
       document.getElementById('modalCredDesc').textContent = c.desc;
       document.getElementById('modalCredBtn').href = c.url;
       document.getElementById('modalOpenLink').href = c.url;
