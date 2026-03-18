@@ -918,6 +918,279 @@ footer {
 }
 
 /* ─────────────────────────────────────────
+   THEME TOGGLE BUTTON
+───────────────────────────────────────── */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 500;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 4px 16px rgba(27, 82, 196, 0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(27, 82, 196, 0.2), inset 0 1px 0 rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+/* ─────────────────────────────────────────
+   DARK MODE
+───────────────────────────────────────── */
+[data-theme="dark"] {
+  --primary:       #6EA4EE;
+  --secondary:     #89B8F5;
+  --tertiary:      #5590DC;
+  --text:          #E8EEF8;
+  --text-muted:    #8A9BB8;
+
+  --glass-bg:       rgba(28, 28, 28, 0.75);
+  --glass-bg-hover: rgba(38, 38, 38, 0.88);
+  --glass-border:   rgba(255, 255, 255, 0.08);
+  --glass-shadow:   0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0,0,0,0.3);
+  --glass-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.65), 0 4px 12px rgba(0,0,0,0.35);
+  --blur: blur(20px) saturate(140%);
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse at 20% 10%,  rgba(40, 40, 40, 0.6)  0%, transparent 55%),
+    radial-gradient(ellipse at 80% 80%,  rgba(30, 30, 30, 0.4)  0%, transparent 55%),
+    radial-gradient(ellipse at 60% 30%,  rgba(50, 50, 50, 0.3)  0%, transparent 50%),
+    linear-gradient(160deg, #0A0A0A 0%, #111111 40%, #0D0D0D 70%, #0A0A0A 100%);
+  color: var(--text);
+}
+
+[data-theme="dark"] .hero {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .hero-badge {
+  background: rgba(110, 164, 238, 0.12);
+  border-color: rgba(110, 164, 238, 0.25);
+  color: var(--primary);
+}
+
+/* Headings: white/near-white, not blue */
+[data-theme="dark"] .hero h1          { color: var(--text); text-shadow: none; }
+[data-theme="dark"] .section-heading  { color: var(--text); }
+
+[data-theme="dark"] .hero-desc        { color: var(--text-muted); }
+
+/* Buttons: ghost style */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-secondary {
+  background: rgba(110, 164, 238, 0.15);
+  border-color: rgba(110, 164, 238, 0.35);
+  color: var(--primary);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .btn-secondary:hover {
+  background: rgba(110, 164, 238, 0.25);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Stat items */
+[data-theme="dark"] .stat-item {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+[data-theme="dark"] .stat-item:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+[data-theme="dark"] .stat-number { color: var(--primary); }
+[data-theme="dark"] .stat-label  { color: var(--text-muted); }
+
+/* Cards */
+[data-theme="dark"] .card {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+[data-theme="dark"] .card:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: var(--glass-shadow-hover), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+[data-theme="dark"] .card p         { color: var(--text-muted); }
+[data-theme="dark"] .card-label     { color: var(--primary); }
+[data-theme="dark"] .card-label::after { background: linear-gradient(90deg, rgba(110,164,238,0.3), transparent); }
+[data-theme="dark"] .card h2        { color: var(--text); }
+
+/* Tags */
+[data-theme="dark"] .tag {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+}
+[data-theme="dark"] .tag:hover {
+  background: rgba(110, 164, 238, 0.15);
+  border-color: rgba(110, 164, 238, 0.3);
+  color: var(--primary);
+}
+
+/* Pillar icons */
+[data-theme="dark"] .pillar-icon {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Vision */
+[data-theme="dark"] .vision-list li  { color: var(--text-muted); }
+[data-theme="dark"] .vision-check {
+  background: rgba(110, 164, 238, 0.12);
+  border-color: rgba(110, 164, 238, 0.3);
+  color: var(--primary);
+}
+
+/* Cert cards — titles white, metadata muted, accent blue */
+[data-theme="dark"] .cert-card {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+[data-theme="dark"] .cert-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+[data-theme="dark"] .cert-badge-img {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+[data-theme="dark"] .cert-issuer     { color: var(--text-muted); }
+[data-theme="dark"] .cert-name       { color: var(--text); }
+[data-theme="dark"] .cert-id         { color: var(--primary); }
+[data-theme="dark"] .cert-click-hint { color: var(--text-muted); }
+[data-theme="dark"] .cert-card:hover .cert-name       { color: var(--primary); }
+[data-theme="dark"] .cert-card:hover .cert-click-hint { color: var(--primary); }
+
+/* Tabs — segmented control */
+[data-theme="dark"] .cert-tabs {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+}
+[data-theme="dark"] .cert-tab        { color: var(--text-muted); }
+[data-theme="dark"] .cert-tab:hover  { color: var(--text); background: rgba(255,255,255,0.06); }
+[data-theme="dark"] .cert-tab.active {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
+  font-weight: 600;
+}
+
+/* Course cert cards */
+[data-theme="dark"] .course-cert-card {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+[data-theme="dark"] .course-cert-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+[data-theme="dark"] .course-cert-name   { color: var(--text); }
+[data-theme="dark"] .course-cert-issuer { color: var(--text-muted); }
+[data-theme="dark"] .course-cert-meta   { color: var(--primary); border-top-color: rgba(255,255,255,0.08); }
+
+/* Modals */
+[data-theme="dark"] .modal-overlay { background: rgba(0, 0, 0, 0.75); }
+[data-theme="dark"] .modal {
+  background: rgba(18, 18, 18, 0.96);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 8px 20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+[data-theme="dark"] .modal-header {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .modal-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+[data-theme="dark"] .modal-title   { color: var(--text); }
+[data-theme="dark"] .modal-issuer  { color: var(--text-muted); }
+[data-theme="dark"] .modal-close {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+  color: var(--text-muted);
+}
+[data-theme="dark"] .modal-close:hover { background: rgba(255,255,255,0.12); color: var(--text); }
+
+[data-theme="dark"] .modal-credential-preview {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .credential-badge-large {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+[data-theme="dark"] .credential-name  { color: var(--text); }
+[data-theme="dark"] .credential-exam  { color: var(--primary); }
+[data-theme="dark"] .credential-desc  { color: var(--text-muted); }
+[data-theme="dark"] .credential-meta  { color: var(--text-muted); }
+[data-theme="dark"] .credential-btn {
+  background: rgba(110, 164, 238, 0.18);
+  border-color: rgba(110, 164, 238, 0.35);
+  color: var(--primary);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+[data-theme="dark"] .credential-btn:hover {
+  background: rgba(110, 164, 238, 0.28);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] .modal-footer {
+  background: rgba(255, 255, 255, 0.02);
+  border-top-color: rgba(255, 255, 255, 0.07);
+}
+[data-theme="dark"] .modal-cert-id    { color: var(--text-muted); }
+[data-theme="dark"] .modal-open-link  { color: var(--primary); }
+
+/* Footer */
+[data-theme="dark"] footer         { border-top-color: rgba(255, 255, 255, 0.08); }
+[data-theme="dark"] .footer-quote  { color: var(--text-muted); }
+[data-theme="dark"] .footer-links a { color: var(--primary); }
+
+/* Theme toggle */
+[data-theme="dark"] .theme-toggle {
+  background: rgba(28, 28, 28, 0.85);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(42, 42, 42, 0.9);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* smooth theme transition on all elements */
+*, *::before, *::after {
+  transition: background-color 0.35s ease, border-color 0.35s ease,
+              color 0.35s ease, box-shadow 0.35s ease;
+}
+/* but don't slow down transforms/opacity for animations */
+.card, .cert-card, .course-cert-card, .stat-item, .btn, .tag, .theme-toggle {
+  transition: background-color 0.35s ease, border-color 0.35s ease,
+              color 0.35s ease, box-shadow 0.35s ease,
+              transform 0.25s ease, opacity 0.3s ease;
+}
+
+/* ─────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────── */
 @media (max-width: 700px) {
