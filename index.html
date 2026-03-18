@@ -12,14 +12,12 @@
 
   <!-- Loading Screen -->
   <div class="loading-screen" id="loadingScreen">
-    <div class="loading-container">
-      <div class="glitch" data-text="ABDUL HUBBALI">ABDUL HUBBALI</div>
+    <div class="hello-cloud" id="helloCloud"></div>
+    <div class="loading-bar-wrap">
       <div class="loading-bar">
         <div class="loading-progress"></div>
       </div>
-      <p class="loading-text">INITIALIZING DEVSECOPS SYSTEMS...</p>
     </div>
-    <div class="scanlines"></div>
   </div>
 
   <div class="page">
@@ -331,12 +329,12 @@
       <div class="modal-body">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0;">
           <div style="text-align: center;">
-            <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(232, 244, 65, 0.1); border: 2px solid rgba(232, 244, 65, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(232, 244, 65, 0.4);">
+            <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(27, 82, 196, 0.35);">
               <img src="logos/aws.png" alt="Amazon AWS" style="width: 100px; height: 100px; object-fit: contain;">
             </div>
           </div>
           <div style="text-align: center;">
-            <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(232, 244, 65, 0.1); border: 2px solid rgba(232, 244, 65, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(232, 244, 65, 0.4);">
+            <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(27, 82, 196, 0.35);">
               <img src="logos/azure.png" alt="Microsoft Azure" style="width: 100px; height: 100px; object-fit: contain;">
             </div>
           </div>
@@ -357,20 +355,20 @@
       <div class="modal-body">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0;">
           <div style="text-align: center;">
-            <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(232, 244, 65, 0.1); border: 2px solid rgba(232, 244, 65, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(232, 244, 65, 0.4);">
+            <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(27, 82, 196, 0.35);">
               <img src="logos/microsoft-certified-associate-badge.svg" alt="AZ-104" style="width: 120px; height: 120px; object-fit: contain;">
             </div>
             <h3 style="color: var(--primary); font-family: var(--serif); font-size: 0.95rem; margin-bottom: 0.5rem;">Azure Administrator</h3>
             <p style="color: var(--tertiary); font-size: 0.85rem; margin-bottom: 1rem;">AZ-104</p>
-            <a href="https://learn.microsoft.com/en-us/users/abdulhubbali/credentials/14fe230f17f3ace6" target="_blank" style="display: inline-block; color: var(--primary); border: 2px solid var(--primary); padding: 8px 16px; border-radius: 6px; font-family: var(--mono); font-size: 11px; font-weight: 600; transition: all 0.3s; box-shadow: 0 0 15px rgba(232, 244, 65, 0.3);" onmouseover="this.style.boxShadow='0 0 30px rgba(232, 244, 65, 0.6)'" onmouseout="this.style.boxShadow='0 0 15px rgba(232, 244, 65, 0.3)'">View Full Credential</a>
+            <a href="https://learn.microsoft.com/en-us/users/abdulhubbali/credentials/14fe230f17f3ace6" target="_blank" style="display: inline-block; color: var(--primary); border: 2px solid var(--primary); padding: 8px 16px; border-radius: 6px; font-family: var(--mono); font-size: 11px; font-weight: 600; transition: all 0.3s; box-shadow: 0 0 15px rgba(27, 82, 196, 0.3);" onmouseover="this.style.boxShadow='0 0 30px rgba(27, 82, 196, 0.6)'" onmouseout="this.style.boxShadow='0 0 15px rgba(27, 82, 196, 0.3)'">View Full Credential</a>
           </div>
           <div style="text-align: center;">
-            <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(232, 244, 65, 0.1); border: 2px solid rgba(232, 244, 65, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(232, 244, 65, 0.4);">
+            <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(27, 82, 196, 0.08); border: 2px solid rgba(27, 82, 196, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(27, 82, 196, 0.35);">
               <img src="logos/microsoft-certified-expert-badge.svg" alt="AZ-400" style="width: 120px; height: 120px; object-fit: contain;">
             </div>
             <h3 style="color: var(--primary); font-family: var(--serif); font-size: 0.95rem; margin-bottom: 0.5rem;">DevOps Engineer Expert</h3>
             <p style="color: var(--tertiary); font-size: 0.85rem; margin-bottom: 1rem;">AZ-400</p>
-            <a href="https://learn.microsoft.com/en-in/users/abdulhubbali/credentials/86cb8c4fae12992e" target="_blank" style="display: inline-block; color: var(--primary); border: 2px solid var(--primary); padding: 8px 16px; border-radius: 6px; font-family: var(--mono); font-size: 11px; font-weight: 600; transition: all 0.3s; box-shadow: 0 0 15px rgba(232, 244, 65, 0.3);" onmouseover="this.style.boxShadow='0 0 30px rgba(232, 244, 65, 0.6)'" onmouseout="this.style.boxShadow='0 0 15px rgba(232, 244, 65, 0.3)'">View Full Credential</a>
+            <a href="https://learn.microsoft.com/en-in/users/abdulhubbali/credentials/86cb8c4fae12992e" target="_blank" style="display: inline-block; color: var(--primary); border: 2px solid var(--primary); padding: 8px 16px; border-radius: 6px; font-family: var(--mono); font-size: 11px; font-weight: 600; transition: all 0.3s; box-shadow: 0 0 15px rgba(27, 82, 196, 0.3);" onmouseover="this.style.boxShadow='0 0 30px rgba(27, 82, 196, 0.6)'" onmouseout="this.style.boxShadow='0 0 15px rgba(27, 82, 196, 0.3)'">View Full Credential</a>
           </div>
         </div>
       </div>
@@ -587,19 +585,44 @@
 
     // ── Tab switching ──
     function switchTab(tabName) {
-      document.querySelectorAll('.cert-tab-content').forEach(el => el.classList.remove('active'));
+      const current = document.querySelector('.cert-tab-content.active');
+      const next = document.getElementById(tabName);
+      if (current === next) return;
+
+      // Update tab buttons
       document.querySelectorAll('.cert-tab').forEach(el => el.classList.remove('active'));
-      document.getElementById(tabName).classList.add('active');
       event.target.classList.add('active');
 
-      if (tabName === 'courses') {
-        setTimeout(() => {
+      // Fade out current
+      current.style.opacity = '0';
+      current.style.transform = 'translateY(8px)';
+
+      setTimeout(() => {
+        current.classList.remove('active');
+        current.style.opacity = '';
+        current.style.transform = '';
+
+        next.classList.add('active');
+        next.style.opacity = '0';
+        next.style.transform = 'translateY(8px)';
+
+        // Trigger course card reveal if switching to courses
+        if (tabName === 'courses') {
           document.querySelectorAll('.course-cert-card').forEach((el, i) => {
             el.style.transitionDelay = `${(i % 5) * 40}ms`;
             el.classList.add('visible');
           });
-        }, 50);
-      }
+        }
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            next.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            next.style.opacity = '1';
+            next.style.transform = 'translateY(0)';
+            setTimeout(() => { next.style.transition = ''; }, 350);
+          });
+        });
+      }, 200);
     }
 
     // ── Close on overlay click ──
@@ -642,12 +665,89 @@
       el.style.transitionDelay = `${(i % 5) * 40}ms`;
     });
 
-    // ── Loading screen ──
+    // ── Loading screen — hello word cloud ──
+    const hellos = [
+      { word: 'Hello',         size: 72, weight: 900 },
+      { word: 'Hola',          size: 48, weight: 700 },
+      { word: 'Bonjour',       size: 36, weight: 400 },
+      { word: 'Ciao',          size: 52, weight: 700 },
+      { word: 'Hallo',         size: 40, weight: 700 },
+      { word: 'Olá',           size: 44, weight: 700 },
+      { word: 'مرحبا',         size: 36, weight: 400 },
+      { word: '你好',           size: 56, weight: 900 },
+      { word: 'Привет',        size: 38, weight: 700 },
+      { word: 'Merhaba',       size: 34, weight: 400 },
+      { word: 'Salut',         size: 32, weight: 400 },
+      { word: 'Hei',           size: 44, weight: 700 },
+      { word: 'Cześć',         size: 34, weight: 700 },
+      { word: 'Salam',         size: 40, weight: 700 },
+      { word: 'Halo',          size: 38, weight: 700 },
+      { word: 'Hi',            size: 64, weight: 900 },
+      // Indian languages
+      { word: 'नमस्ते',        size: 48, weight: 900 }, // Hindi
+      { word: 'வணக்கம்',       size: 38, weight: 700 }, // Tamil
+      { word: 'నమస్కారం',      size: 34, weight: 700 }, // Telugu
+      { word: 'ನಮಸ್ಕಾರ',       size: 36, weight: 700 }, // Kannada
+      { word: 'നമസ്കാരം',      size: 32, weight: 400 }, // Malayalam
+      { word: 'নমস্কার',        size: 36, weight: 700 }, // Bengali
+      { word: 'नमस्कार',        size: 40, weight: 700 }, // Marathi
+      { word: 'નમસ્તે',         size: 34, weight: 400 }, // Gujarati
+      { word: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ',   size: 28, weight: 400 }, // Punjabi
+      { word: 'ନମସ୍କାର',        size: 30, weight: 400 }, // Odia
+      { word: 'নমস্কাৰ',        size: 28, weight: 400 }, // Assamese
+      { word: 'آداب',           size: 38, weight: 700 }, // Urdu
+      { word: 'ආයුබෝවන්',       size: 26, weight: 400 }, // Sinhala
+    ];
+
+    const cloud = document.getElementById('helloCloud');
+    const placed = [];
+
+    function overlaps(a, b) {
+      const pad = 12;
+      return !(a.x + a.w + pad < b.x || b.x + b.w + pad < a.x ||
+               a.y + a.h + pad < b.y || b.y + b.h + pad < a.y);
+    }
+
+    hellos.forEach(({ word, size, weight }) => {
+      const el = document.createElement('span');
+      el.textContent = word;
+      el.className = 'hello-item';
+      el.style.cssText = `font-size:${size}px; font-weight:${weight}; opacity:0;`;
+      cloud.appendChild(el);
+
+      const w = el.offsetWidth || size * word.length * 0.6;
+      const h = el.offsetHeight || size * 1.2;
+      const maxX = cloud.offsetWidth  - w - 10;
+      const maxY = cloud.offsetHeight - h - 10;
+
+      let x, y, tries = 0, ok = false;
+      while (tries++ < 120 && !ok) {
+        x = Math.max(4, Math.random() * maxX);
+        y = Math.max(4, Math.random() * maxY);
+        const box = { x, y, w, h };
+        ok = placed.every(p => !overlaps(p, box));
+      }
+      placed.push({ x, y, w, h });
+
+      el.style.left = x + 'px';
+      el.style.top  = y + 'px';
+
+      // staggered fade in
+      const delay = Math.random() * 600;
+      setTimeout(() => {
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.opacity = weight === 900 ? '1' : weight === 700 ? '0.7' : '0.4';
+        el.style.transform = 'translateY(0)';
+      }, delay);
+    });
+
     window.addEventListener('load', () => {
       setTimeout(() => {
+        clearInterval(helloInterval);
         document.getElementById('loadingScreen').style.display = 'none';
       }, 3100);
     });
+    const helloInterval = null; // kept for compat
   </script>
 
 </body>
