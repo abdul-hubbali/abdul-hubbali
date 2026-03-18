@@ -10,25 +10,25 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary: #00ff9f;
-      --secondary: #ff006e;
-      --tertiary: #0099ff;
-      --dark: #0a0e27;
-      --darker: #050811;
-      --accent: #ffbe0b;
+      --primary: #E8F441;
+      --secondary: #6BA86E;
+      --tertiary: #2E7A72;
+      --dark: #080C05;
+      --darker: #040602;
+      --accent: #E8F441;
       --glow: 0 0 20px var(--primary);
       --serif: 'Orbitron', sans-serif;
       --sans: 'Space Mono', monospace;
       --mono: 'JetBrains Mono', monospace;
       --radius: 12px;
-      --shadow: 0 0 30px rgba(0, 255, 159, 0.2);
-      --shadow-hover: 0 0 50px rgba(0, 255, 159, 0.4);
+      --shadow: 0 0 30px rgba(232, 244, 65, 0.2);
+      --shadow-hover: 0 0 50px rgba(232, 244, 65, 0.4);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: linear-gradient(135deg, var(--darker) 0%, #1a1f3a 50%, var(--dark) 100%);
+      background: linear-gradient(135deg, var(--darker) 0%, #0D1505 50%, var(--dark) 100%);
       color: #e0e0e0;
       font-family: var(--mono);
       font-size: 15px;
@@ -47,8 +47,8 @@
       width: 100%;
       height: 100%;
       background-image: 
-        linear-gradient(0deg, transparent 24%, rgba(0, 255, 159, 0.03) 25%, rgba(0, 255, 159, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 255, 159, 0.03) 75%, rgba(0, 255, 159, 0.03) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, rgba(0, 255, 159, 0.03) 25%, rgba(0, 255, 159, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 255, 159, 0.03) 75%, rgba(0, 255, 159, 0.03) 76%, transparent 77%, transparent);
+        linear-gradient(0deg, transparent 24%, rgba(232, 244, 65, 0.03) 25%, rgba(232, 244, 65, 0.03) 26%, transparent 27%, transparent 74%, rgba(232, 244, 65, 0.03) 75%, rgba(232, 244, 65, 0.03) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(232, 244, 65, 0.03) 25%, rgba(232, 244, 65, 0.03) 26%, transparent 27%, transparent 74%, rgba(232, 244, 65, 0.03) 75%, rgba(232, 244, 65, 0.03) 76%, transparent 77%, transparent);
       background-size: 50px 50px;
       pointer-events: none;
       z-index: -1;
@@ -62,19 +62,11 @@
     }
 
     a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.3s ease;
-      box-shadow: var(--glow);
+      display: none;
     }
 
     a:hover::after {
-      width: 100%;
+      display: none;
     }
 
     a:hover {
@@ -90,7 +82,7 @@
       grid-template-columns: 1fr auto;
       align-items: start;
       gap: 2rem;
-      border-bottom: 2px solid rgba(0, 255, 159, 0.2);
+      border-bottom: 2px solid rgba(232, 244, 65, 0.2);
       margin-bottom: 2.5rem;
       opacity: 0;
       animation: slideDown 0.8s ease-out forwards;
@@ -100,7 +92,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      background: rgba(0, 255, 159, 0.1);
+      background: rgba(232, 244, 65, 0.1);
       color: var(--primary);
       font-family: var(--mono);
       font-size: 11px;
@@ -109,8 +101,8 @@
       padding: 4px 12px;
       border-radius: 100px;
       margin-bottom: 1.2rem;
-      border: 1px solid rgba(0, 255, 159, 0.3);
-      box-shadow: 0 0 10px rgba(0, 255, 159, 0.2);
+      border: 1px solid rgba(232, 244, 65, 0.3);
+      box-shadow: 0 0 10px rgba(232, 244, 65, 0.2);
     }
 
     .hero-badge::before {
@@ -129,7 +121,7 @@
       letter-spacing: 0.05em;
       margin-bottom: 1rem;
       color: var(--primary);
-      text-shadow: 0 0 20px var(--primary), 0 0 40px rgba(0, 255, 159, 0.3);
+      text-shadow: 0 0 20px var(--primary), 0 0 40px rgba(232, 244, 65, 0.3);
       animation: slideDown 0.8s ease-out;
     }
 
@@ -158,28 +150,31 @@
       transition: all 0.18s ease;
       cursor: pointer;
       border: none;
+      overflow: hidden;
     }
+    .btn::after, .btn:hover::after { display: none !important; content: none !important; }
+    .btn:hover { text-shadow: none !important; }
 
     .btn-primary { 
       background: var(--primary); 
       color: var(--darker);
-      box-shadow: 0 0 20px rgba(0, 255, 159, 0.3);
+      box-shadow: 0 0 20px rgba(232, 244, 65, 0.3);
     }
     .btn-primary:hover { 
-      background: #00ff9f;
+      background: #E8F441;
       transform: translateY(-1px); 
-      box-shadow: 0 0 40px rgba(0, 255, 159, 0.6);
+      box-shadow: 0 0 40px rgba(232, 244, 65, 0.6);
     }
     
     .btn-secondary { 
       background: var(--primary);
       color: var(--darker);
-      box-shadow: 0 0 20px rgba(0, 255, 159, 0.3);
+      box-shadow: 0 0 20px rgba(232, 244, 65, 0.3);
     }
     .btn-secondary:hover { 
-      background: #00ff9f;
+      background: #E8F441;
       transform: translateY(-1px); 
-      box-shadow: 0 0 40px rgba(0, 255, 159, 0.6);
+      box-shadow: 0 0 40px rgba(232, 244, 65, 0.6);
     }
 
     .stat-strip {
@@ -190,20 +185,20 @@
     }
 
     .stat-item {
-      background: rgba(0, 255, 159, 0.05);
-      border: 1px solid rgba(0, 255, 159, 0.2);
+      background: rgba(232, 244, 65, 0.05);
+      border: 1px solid rgba(232, 244, 65, 0.2);
       border-radius: var(--radius);
       padding: 0.8rem 1.2rem;
       min-width: 150px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(0, 255, 159, 0.1);
+      box-shadow: 0 0 15px rgba(232, 244, 65, 0.1);
       transition: all 0.3s ease;
     }
 
     .stat-item:hover {
       border-color: var(--primary);
-      box-shadow: 0 0 30px rgba(0, 255, 159, 0.3);
-      background: rgba(0, 255, 159, 0.1);
+      box-shadow: 0 0 30px rgba(232, 244, 65, 0.3);
+      background: rgba(232, 244, 65, 0.1);
     }
 
     .stat-number {
@@ -229,11 +224,11 @@
 
     /* ── Card ── */
     .card {
-      background: rgba(10, 14, 39, 0.6);
-      border: 2px solid rgba(0, 255, 159, 0.2);
+      background: rgba(8, 12, 5, 0.6);
+      border: 2px solid rgba(232, 244, 65, 0.2);
       border-radius: var(--radius);
       padding: 1.6rem;
-      box-shadow: 0 0 20px rgba(0, 255, 159, 0.1);
+      box-shadow: 0 0 20px rgba(232, 244, 65, 0.1);
       transition: all 0.3s ease;
       opacity: 0;
       translate: 0 14px;
@@ -242,7 +237,7 @@
     .card.visible { opacity: 1; translate: 0 0; }
     .card:hover { 
       border-color: var(--primary);
-      box-shadow: 0 0 30px rgba(0, 255, 159, 0.3), inset 0 0 20px rgba(0, 255, 159, 0.05);
+      box-shadow: 0 0 30px rgba(232, 244, 65, 0.3), inset 0 0 20px rgba(232, 244, 65, 0.05);
       transform: translateY(-2px);
     }
     .card-wide { grid-column: 1 / -1; }
@@ -258,7 +253,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      text-shadow: 0 0 10px rgba(0, 255, 159, 0.3);
+      text-shadow: 0 0 10px rgba(232, 244, 65, 0.3);
     }
 
     .card-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--primary), transparent); }
@@ -273,11 +268,11 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1.1rem;
       margin-bottom: 1rem;
-      box-shadow: 0 0 20px rgba(0, 255, 159, 0.2);
+      box-shadow: 0 0 20px rgba(232, 244, 65, 0.2);
     }
 
-    .icon-blue { background: rgba(0, 153, 255, 0.2); border: 1px solid var(--tertiary); }
-    .icon-green { background: rgba(0, 255, 159, 0.2); border: 1px solid var(--primary); }
+    .icon-blue { background: rgba(46, 122, 114, 0.2); border: 1px solid var(--tertiary); }
+    .icon-green { background: rgba(232, 244, 65, 0.2); border: 1px solid var(--primary); }
     .icon-amber { background: rgba(255, 190, 11, 0.2); border: 1px solid var(--accent); }
     .icon-gray { background: rgba(150, 150, 150, 0.1); border: 1px solid #555; }
 
@@ -289,15 +284,15 @@
       font-size: 11px;
       padding: 3px 9px;
       border-radius: 6px;
-      background: rgba(0, 255, 159, 0.1);
+      background: rgba(232, 244, 65, 0.1);
       color: var(--primary);
-      border: 1px solid rgba(0, 255, 159, 0.3);
+      border: 1px solid rgba(232, 244, 65, 0.3);
       transition: all 0.15s;
     }
 
-    .tag:hover { background: rgba(0, 255, 159, 0.2); border-color: var(--primary); box-shadow: 0 0 10px rgba(0, 255, 159, 0.2); }
-    .tag-blue { background: rgba(0, 153, 255, 0.1); color: var(--tertiary); border-color: rgba(0, 153, 255, 0.3); }
-    .tag-green { background: rgba(0, 255, 159, 0.1); color: var(--primary); border-color: rgba(0, 255, 159, 0.3); }
+    .tag:hover { background: rgba(232, 244, 65, 0.2); border-color: var(--primary); box-shadow: 0 0 10px rgba(232, 244, 65, 0.2); }
+    .tag-blue { background: rgba(46, 122, 114, 0.1); color: var(--tertiary); border-color: rgba(46, 122, 114, 0.3); }
+    .tag-green { background: rgba(232, 244, 65, 0.1); color: var(--primary); border-color: rgba(232, 244, 65, 0.3); }
     .tag-amber { background: rgba(255, 190, 11, 0.1); color: var(--accent); border-color: rgba(255, 190, 11, 0.3); }
 
     /* ── Section heading ── */
@@ -316,14 +311,14 @@
 
     /* ── Cert cards ── */
     .cert-card {
-      background: rgba(10, 14, 39, 0.6);
-      border: 2px solid rgba(0, 255, 159, 0.2);
+      background: rgba(8, 12, 5, 0.6);
+      border: 2px solid rgba(232, 244, 65, 0.2);
       border-radius: var(--radius);
       padding: 1.4rem 1.6rem;
       display: flex;
       align-items: center;
       gap: 1.4rem;
-      box-shadow: 0 0 20px rgba(0, 255, 159, 0.1);
+      box-shadow: 0 0 20px rgba(232, 244, 65, 0.1);
       transition: all 0.3s ease;
       opacity: 0;
       translate: 0 14px;
@@ -333,7 +328,7 @@
     .cert-card.visible { opacity: 1; translate: 0 0; }
     .cert-card:hover { 
       border-color: var(--primary);
-      box-shadow: 0 0 40px rgba(0, 255, 159, 0.4);
+      box-shadow: 0 0 40px rgba(232, 244, 65, 0.4);
       transform: translateY(-2px);
     }
 
@@ -342,8 +337,8 @@
       flex-shrink: 0;
       border-radius: 10px;
       overflow: hidden;
-      background: rgba(0, 255, 159, 0.1);
-      border: 1px solid rgba(0, 255, 159, 0.2);
+      background: rgba(232, 244, 65, 0.1);
+      border: 1px solid rgba(232, 244, 65, 0.2);
       display: flex; align-items: center; justify-content: center;
     }
 
@@ -366,7 +361,7 @@
       color: var(--primary);
       line-height: 1.4;
       margin-bottom: 0.25rem;
-      text-shadow: 0 0 10px rgba(0, 255, 159, 0.3);
+      text-shadow: 0 0 10px rgba(232, 244, 65, 0.3);
     }
 
     .cert-id {
@@ -379,7 +374,7 @@
     .cert-tabs {
       display: flex;
       gap: 0;
-      border-bottom: 2px solid rgba(0, 255, 159, 0.2);
+      border-bottom: 2px solid rgba(232, 244, 65, 0.2);
       margin-bottom: 1.6rem;
       align-items: center;
     }
@@ -403,7 +398,7 @@
 
     .cert-tab:hover { 
       color: var(--primary);
-      text-shadow: 0 0 10px rgba(0, 255, 159, 0.3);
+      text-shadow: 0 0 10px rgba(232, 244, 65, 0.3);
     }
 
     .cert-tab.active {
@@ -431,8 +426,8 @@
     }
 
     .course-cert-card {
-      background: rgba(10, 14, 39, 0.6);
-      border: 2px solid rgba(0, 255, 159, 0.2);
+      background: rgba(8, 12, 5, 0.6);
+      border: 2px solid rgba(232, 244, 65, 0.2);
       border-radius: var(--radius);
       padding: 1.2rem;
       display: flex;
@@ -443,7 +438,7 @@
       transition: all 0.3s ease;
       text-decoration: none;
       color: inherit;
-      box-shadow: 0 0 20px rgba(0, 255, 159, 0.1);
+      box-shadow: 0 0 20px rgba(232, 244, 65, 0.1);
       opacity: 0;
       translate: 0 14px;
     }
@@ -455,7 +450,7 @@
 
     .course-cert-card:hover {
       border-color: var(--primary);
-      box-shadow: 0 0 40px rgba(0, 255, 159, 0.4);
+      box-shadow: 0 0 40px rgba(232, 244, 65, 0.4);
       transform: translateY(-3px);
     }
 
@@ -469,9 +464,9 @@
       margin-bottom: 0.8rem;
       flex-shrink: 0;
       overflow: hidden;
-      background: rgba(0, 255, 159, 0.15);
-      border: 1px solid rgba(0, 255, 159, 0.3);
-      box-shadow: 0 0 15px rgba(0, 255, 159, 0.2);
+      background: rgba(232, 244, 65, 0.15);
+      border: 1px solid rgba(232, 244, 65, 0.3);
+      box-shadow: 0 0 15px rgba(232, 244, 65, 0.2);
     }
 
     .course-cert-icon img {
@@ -496,7 +491,7 @@
       color: var(--primary);
       line-height: 1.3;
       margin-bottom: 0.6rem;
-      text-shadow: 0 0 10px rgba(0, 255, 159, 0.2);
+      text-shadow: 0 0 10px rgba(232, 244, 65, 0.2);
     }
 
     .course-cert-meta {
@@ -509,7 +504,7 @@
       gap: 0.3rem;
       margin-top: auto;
       padding-top: 0.6rem;
-      border-top: 1px solid rgba(0, 255, 159, 0.2);
+      border-top: 1px solid rgba(232, 244, 65, 0.2);
       width: 100%;
     }
 
@@ -517,7 +512,7 @@
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(5, 8, 17, 0.85);
+      background: rgba(3, 5, 2, 0.85);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       z-index: 1000;
@@ -536,10 +531,10 @@
     }
 
     .modal {
-      background: rgba(10, 14, 39, 0.95);
-      border: 2px solid rgba(0, 255, 159, 0.3);
+      background: rgba(8, 12, 5, 0.95);
+      border: 2px solid rgba(232, 244, 65, 0.3);
       border-radius: 16px;
-      box-shadow: 0 0 60px rgba(0, 255, 159, 0.3), inset 0 0 40px rgba(0, 255, 159, 0.05);
+      box-shadow: 0 0 60px rgba(232, 244, 65, 0.3), inset 0 0 40px rgba(232, 244, 65, 0.05);
       width: 100%;
       max-width: 560px;
       overflow: hidden;
@@ -556,17 +551,17 @@
       align-items: center;
       gap: 1.2rem;
       padding: 1.4rem 1.6rem;
-      border-bottom: 1px solid rgba(0, 255, 159, 0.2);
-      background: rgba(0, 255, 159, 0.05);
+      border-bottom: 1px solid rgba(232, 244, 65, 0.2);
+      background: rgba(232, 244, 65, 0.05);
     }
 
     .modal-badge {
       width: 56px; height: 56px;
       border-radius: 10px;
       overflow: hidden;
-      background: rgba(0, 255, 159, 0.1);
+      background: rgba(232, 244, 65, 0.1);
       flex-shrink: 0;
-      border: 1px solid rgba(0, 255, 159, 0.2);
+      border: 1px solid rgba(232, 244, 65, 0.2);
       display: flex; align-items: center; justify-content: center;
     }
 
@@ -595,8 +590,8 @@
     .modal-close {
       width: 32px; height: 32px;
       border-radius: 8px;
-      border: 1px solid rgba(0, 255, 159, 0.2);
-      background: rgba(0, 255, 159, 0.05);
+      border: 1px solid rgba(232, 244, 65, 0.2);
+      background: rgba(232, 244, 65, 0.05);
       color: var(--primary);
       cursor: pointer;
       display: flex; align-items: center; justify-content: center;
@@ -606,9 +601,9 @@
     }
 
     .modal-close:hover { 
-      background: rgba(0, 255, 159, 0.15); 
+      background: rgba(232, 244, 65, 0.15); 
       border-color: var(--primary);
-      box-shadow: 0 0 20px rgba(0, 255, 159, 0.3);
+      box-shadow: 0 0 20px rgba(232, 244, 65, 0.3);
     }
 
     .modal-body { padding: 1.4rem 1.6rem; }
@@ -617,8 +612,8 @@
       display: flex;
       gap: 1.6rem;
       align-items: center;
-      background: rgba(0, 255, 159, 0.05);
-      border: 1px solid rgba(0, 255, 159, 0.2);
+      background: rgba(232, 244, 65, 0.05);
+      border: 1px solid rgba(232, 244, 65, 0.2);
       border-radius: 10px;
       padding: 1.6rem;
     }
@@ -629,11 +624,11 @@
       flex-shrink: 0;
       border-radius: 12px;
       overflow: hidden;
-      background: rgba(0, 255, 159, 0.1);
+      background: rgba(232, 244, 65, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(0, 255, 159, 0.2);
+      border: 1px solid rgba(232, 244, 65, 0.2);
     }
 
     .credential-badge-large img {
@@ -695,12 +690,12 @@
       color: var(--darker);
       text-decoration: none;
       transition: all 0.15s;
-      box-shadow: 0 0 20px rgba(0, 255, 159, 0.3);
+      box-shadow: 0 0 20px rgba(232, 244, 65, 0.3);
     }
 
     .credential-btn:hover { 
       transform: translateY(-2px);
-      box-shadow: 0 0 40px rgba(0, 255, 159, 0.6);
+      box-shadow: 0 0 40px rgba(232, 244, 65, 0.6);
     }
 
     @media (max-width: 500px) {
@@ -713,8 +708,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 1rem 1.6rem;
-      border-top: 1px solid rgba(0, 255, 159, 0.2);
-      background: rgba(0, 255, 159, 0.03);
+      border-top: 1px solid rgba(232, 244, 65, 0.2);
+      background: rgba(232, 244, 65, 0.03);
     }
 
     .modal-cert-id {
@@ -732,7 +727,7 @@
       color: var(--primary);
       text-decoration: none;
       transition: all 0.15s;
-      text-shadow: 0 0 10px rgba(0, 255, 159, 0.2);
+      text-shadow: 0 0 10px rgba(232, 244, 65, 0.2);
     }
 
     .modal-open-link:hover { 
@@ -755,7 +750,7 @@
       text-transform: uppercase;
       color: var(--primary);
       margin-bottom: 0.5rem;
-      text-shadow: 0 0 10px rgba(0, 255, 159, 0.2);
+      text-shadow: 0 0 10px rgba(232, 244, 65, 0.2);
     }
 
     /* ── Vision ── */
@@ -773,7 +768,7 @@
     .vision-check {
       width: 20px; height: 20px;
       border-radius: 50%;
-      background: rgba(0, 255, 159, 0.2);
+      background: rgba(232, 244, 65, 0.2);
       color: var(--primary);
       display: flex; align-items: center; justify-content: center;
       font-size: 10px;
@@ -781,14 +776,14 @@
       flex-shrink: 0;
       margin-top: 1px;
       border: 1px solid var(--primary);
-      box-shadow: 0 0 10px rgba(0, 255, 159, 0.2);
+      box-shadow: 0 0 10px rgba(232, 244, 65, 0.2);
     }
 
     /* ── Footer ── */
     footer {
       margin-top: 3.5rem;
       padding-top: 2rem;
-      border-top: 2px solid rgba(0, 255, 159, 0.2);
+      border-top: 2px solid rgba(232, 244, 65, 0.2);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -815,7 +810,7 @@
       align-items: center;
       gap: 0.35rem;
       transition: all 0.15s;
-      text-shadow: 0 0 10px rgba(0, 255, 159, 0.2);
+      text-shadow: 0 0 10px rgba(232, 244, 65, 0.2);
     }
 
     .footer-links a:hover { text-shadow: 0 0 20px var(--primary); }
@@ -1089,7 +1084,7 @@
       </div>
       <div class="stat-item" onclick="openCertificationsPopup()" style="cursor: pointer;">
         <div class="stat-number">2</div>
-        <div class="stat-label">MS Certifications</div>
+        <div class="stat-label">Professional Certifications</div>
       </div>
     </div>
   </header>
@@ -1105,12 +1100,12 @@
     <div class="card">
       <div class="card-label">Focus Areas</div>
       <div class="tags" style="margin-top:0">
-        <span class="tag tag-blue">Cloud Security Posture Mgmt</span>
-        <span class="tag tag-blue">Container Orchestration</span>
+        <span class="tag tag-green">Cloud Security Posture Mgmt</span>
+        <span class="tag tag-green">Container Orchestration</span>
         <span class="tag tag-green">CI/CD Pipelines</span>
         <span class="tag tag-green">Infrastructure as Code</span>
-        <span class="tag tag-amber">Threat Detection</span>
-        <span class="tag tag-amber">Compliance Automation</span>
+        <span class="tag tag-green">Threat Detection</span>
+        <span class="tag tag-green">Compliance Automation</span>
         <span class="tag">SDLC Security Integration</span>
         <span class="tag">Multi-Cloud Environments</span>
       </div>
@@ -1131,11 +1126,7 @@
     <div class="grid grid-2">
       <div class="cert-card" onclick="openCert('az104')" role="button" tabindex="0" aria-label="View Azure Administrator Associate credential">
         <div class="cert-badge-img">
-          <img
-            src="microsoft-certified-associate-badge.svg"
-            alt="Azure Administrator Associate Badge"
-            
-          />
+          <img src="logos/Microsoft.png" alt="Microsoft" />
         </div>
         <div class="cert-info">
           <div class="cert-issuer">Microsoft Certified</div>
@@ -1150,11 +1141,7 @@
 
       <div class="cert-card" onclick="openCert('az400')" role="button" tabindex="0" aria-label="View DevOps Engineer Expert credential">
         <div class="cert-badge-img">
-          <img
-            src="microsoft-certified-expert-badge.svg"
-            alt="DevOps Engineer Expert Badge"
-            
-          />
+          <img src="logos/Microsoft.png" alt="Microsoft" />
         </div>
         <div class="cert-info">
           <div class="cert-issuer">Microsoft Certified</div>
@@ -1238,19 +1225,19 @@
     <div class="card">
       <div class="card-label">Cloud Platforms</div>
       <div class="tags" style="margin-top:0">
-        <span class="tag tag-blue">Microsoft Azure</span>
-        <span class="tag tag-blue">AWS</span>
+        <span class="tag">Microsoft Azure</span>
+        <span class="tag">AWS</span>
       </div>
     </div>
 
     <div class="card">
       <div class="card-label">DevOps Tools</div>
       <div class="tags" style="margin-top:0">
-        <span class="tag tag-green">Azure DevOps</span>
-        <span class="tag tag-green">Azure Pipelines</span>
-        <span class="tag tag-green">Azure Artifacts</span>
-        <span class="tag tag-green">GitHub</span>
-        <span class="tag tag-green">GIT</span>
+        <span class="tag">Azure DevOps</span>
+        <span class="tag">Azure Pipelines</span>
+        <span class="tag">Azure Artifacts</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">GIT</span>
       </div>
     </div>
 
@@ -1265,29 +1252,29 @@
     <div class="card">
       <div class="card-label">Containerization</div>
       <div class="tags" style="margin-top:0">
-        <span class="tag tag-blue">Docker</span>
-        <span class="tag tag-blue">Azure Kubernetes Service</span>
-        <span class="tag tag-blue">Azure Container Registry</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Azure Kubernetes Service</span>
+        <span class="tag">Azure Container Registry</span>
       </div>
     </div>
 
     <div class="card">
       <div class="card-label">Version Control</div>
       <div class="tags" style="margin-top:0">
-        <span class="tag tag-green">GitHub</span>
-        <span class="tag tag-green">Azure Repos</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">Azure Repos</span>
       </div>
     </div>
 
     <div class="card">
       <div class="card-label">Security Tools</div>
       <div class="tags" style="margin-top:0">
-        <span class="tag tag-amber">Prisma Cloud</span>
-        <span class="tag tag-amber">Qualys</span>
-        <span class="tag tag-amber">CloudGuard</span>
-        <span class="tag tag-amber">CheckMarx</span>
-        <span class="tag tag-amber">CyberInt</span>
-        <span class="tag tag-amber">Cortex Xpanse</span>
+        <span class="tag">Prisma Cloud</span>
+        <span class="tag">Qualys</span>
+        <span class="tag">CloudGuard</span>
+        <span class="tag">CheckMarx</span>
+        <span class="tag">CyberInt</span>
+        <span class="tag">Cortex Xpanse</span>
       </div>
     </div>
 
@@ -1303,18 +1290,18 @@
     <div class="card">
       <div class="card-label">Visualization Tools</div>
       <div class="tags" style="margin-top:0">
-        <span class="tag tag-blue">Amazon QuickSight</span>
-        <span class="tag tag-blue">Power BI</span>
+        <span class="tag">Amazon QuickSight</span>
+        <span class="tag">Power BI</span>
       </div>
     </div>
 
     <div class="card">
       <div class="card-label">Monitoring & Logging</div>
       <div class="tags" style="margin-top:0">
-        <span class="tag tag-green">Azure Monitor</span>
-        <span class="tag tag-green">Application Insights</span>
-        <span class="tag tag-green">Amazon CloudWatch</span>
-        <span class="tag tag-green">ELK Stack</span>
+        <span class="tag">Azure Monitor</span>
+        <span class="tag">Application Insights</span>
+        <span class="tag">Amazon CloudWatch</span>
+        <span class="tag">ELK Stack</span>
       </div>
     </div>
 
@@ -1389,12 +1376,12 @@
     <div class="modal-body">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0;">
         <div style="text-align: center;">
-          <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(0, 255, 159, 0.1); border: 2px solid rgba(0, 255, 159, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(0, 255, 159, 0.4);">
+          <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(232, 244, 65, 0.1); border: 2px solid rgba(232, 244, 65, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(232, 244, 65, 0.4);">
             <img src="logos/aws.png" alt="Amazon AWS" style="width: 100px; height: 100px; object-fit: contain;">
           </div>
         </div>
         <div style="text-align: center;">
-          <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(0, 255, 159, 0.1); border: 2px solid rgba(0, 255, 159, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(0, 255, 159, 0.4);">
+          <div style="width: 140px; height: 140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(232, 244, 65, 0.1); border: 2px solid rgba(232, 244, 65, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(232, 244, 65, 0.4);">
             <img src="logos/azure.png" alt="Microsoft Azure" style="width: 100px; height: 100px; object-fit: contain;">
           </div>
         </div>
@@ -1415,20 +1402,20 @@
     <div class="modal-body">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0;">
         <div style="text-align: center;">
-          <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(0, 255, 159, 0.1); border: 2px solid rgba(0, 255, 159, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(0, 255, 159, 0.4);">
+          <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(232, 244, 65, 0.1); border: 2px solid rgba(232, 244, 65, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(232, 244, 65, 0.4);">
             <img src="logos/microsoft-certified-associate-badge.svg" alt="AZ-104" style="width: 120px; height: 120px; object-fit: contain;">
           </div>
           <h3 style="color: var(--primary); font-family: var(--serif); font-size: 0.95rem; margin-bottom: 0.5rem;">Azure Administrator</h3>
           <p style="color: var(--tertiary); font-size: 0.85rem; margin-bottom: 1rem;">AZ-104</p>
-          <a href="https://learn.microsoft.com/en-us/users/abdulhubbali/credentials/14fe230f17f3ace6?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" style="display: inline-block; color: var(--primary); border: 2px solid var(--primary); padding: 8px 16px; border-radius: 6px; font-family: var(--mono); font-size: 11px; font-weight: 600; transition: all 0.3s; box-shadow: 0 0 15px rgba(0, 255, 159, 0.3);" onmouseover="this.style.boxShadow='0 0 30px rgba(0, 255, 159, 0.6)'" onmouseout="this.style.boxShadow='0 0 15px rgba(0, 255, 159, 0.3)'">View Full Credential</a>
+          <a href="https://learn.microsoft.com/en-us/users/abdulhubbali/credentials/14fe230f17f3ace6?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" style="display: inline-block; color: var(--primary); border: 2px solid var(--primary); padding: 8px 16px; border-radius: 6px; font-family: var(--mono); font-size: 11px; font-weight: 600; transition: all 0.3s; box-shadow: 0 0 15px rgba(232, 244, 65, 0.3);" onmouseover="this.style.boxShadow='0 0 30px rgba(232, 244, 65, 0.6)'" onmouseout="this.style.boxShadow='0 0 15px rgba(232, 244, 65, 0.3)'">View Full Credential</a>
         </div>
         <div style="text-align: center;">
-          <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(0, 255, 159, 0.1); border: 2px solid rgba(0, 255, 159, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(0, 255, 159, 0.4);">
+          <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(232, 244, 65, 0.1); border: 2px solid rgba(232, 244, 65, 0.3); border-radius: 12px; box-shadow: 0 0 50px rgba(232, 244, 65, 0.4);">
             <img src="logos/microsoft-certified-expert-badge.svg" alt="AZ-400" style="width: 120px; height: 120px; object-fit: contain;">
           </div>
           <h3 style="color: var(--primary); font-family: var(--serif); font-size: 0.95rem; margin-bottom: 0.5rem;">DevOps Engineer Expert</h3>
           <p style="color: var(--tertiary); font-size: 0.85rem; margin-bottom: 1rem;">AZ-400</p>
-          <a href="https://learn.microsoft.com/en-in/users/abdulhubbali/credentials/86cb8c4fae12992e?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" style="display: inline-block; color: var(--primary); border: 2px solid var(--primary); padding: 8px 16px; border-radius: 6px; font-family: var(--mono); font-size: 11px; font-weight: 600; transition: all 0.3s; box-shadow: 0 0 15px rgba(0, 255, 159, 0.3);" onmouseover="this.style.boxShadow='0 0 30px rgba(0, 255, 159, 0.6)'" onmouseout="this.style.boxShadow='0 0 15px rgba(0, 255, 159, 0.3)'">View Full Credential</a>
+          <a href="https://learn.microsoft.com/en-in/users/abdulhubbali/credentials/86cb8c4fae12992e?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" style="display: inline-block; color: var(--primary); border: 2px solid var(--primary); padding: 8px 16px; border-radius: 6px; font-family: var(--mono); font-size: 11px; font-weight: 600; transition: all 0.3s; box-shadow: 0 0 15px rgba(232, 244, 65, 0.3);" onmouseover="this.style.boxShadow='0 0 30px rgba(232, 244, 65, 0.6)'" onmouseout="this.style.boxShadow='0 0 15px rgba(232, 244, 65, 0.3)'">View Full Credential</a>
         </div>
       </div>
     </div>
@@ -1578,7 +1565,7 @@
     const overlay = document.getElementById('certModal');
     document.getElementById('modalTitle').textContent = c.title;
     document.getElementById('modalCertId').textContent = c.id;
-    document.getElementById('modalBadgeImg').src = c.badge;
+    document.getElementById('modalBadgeImg').src = 'logos/Microsoft.png';
     document.getElementById('modalBadgeLarge').src = c.badge;
     document.getElementById('modalCredName').textContent = c.title;
     document.getElementById('modalCredExam').textContent = c.id;
