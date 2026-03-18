@@ -83,7 +83,7 @@ Visit my GitHub to explore:
 - **Objectives** - Learning goals and professional development tracking
 - **DevSecOps Projects** - Cloud security automation and infrastructure code
 
-🔗 **[View All Repositories](https://github.com/inferno12121)**
+🔗 **[View All Repositories](https://github.com/abdul-hubbali)**
 
 ---
 
@@ -99,14 +99,14 @@ Leading the shift towards **security-integrated cloud transformations** where:
 
 ## 💼 Let's Connect
 
-- 🔗 **GitHub**: [inferno12121](https://github.com/inferno12121)
-- 💼 **LinkedIn**: [Abdul Hubbali](https://www.linkedin.com/in/abdul-hubbali-54670813b)
+- 🔗 **GitHub**: [abdul-hubbali](https://github.com/abdul-hubbali)
+- 💼 **LinkedIn**: [Abdul Hubbali](https://www.linkedin.com/in/abdul-hubbali)
 
 ---
 
 ## 📈 GitHub Stats
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=inferno12121&show_icons=true&theme=dark)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=abdul-hubbali&show_icons=true&theme=dark)
 
 ---
 
